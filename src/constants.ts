@@ -1,3 +1,6 @@
+const appBasePath = import.meta.env.BASE_URL;
+const withBasePath = (hash: string) => `${appBasePath}${hash}`;
+
 export const introContent = {
   terminalAriaLabel: "Profile object",
   terminalTitle: "shreyas.profile",
@@ -180,11 +183,15 @@ export const talksContent = {
 export const navigationContent = {
   brand: "Shreyas Sharma",
   links: [
-    { label: "Home", sidebarLabel: "home", href: "/#intro" },
-    { label: "About", sidebarLabel: "about", href: "/#about" },
-    { label: "Experience", sidebarLabel: "experience", href: "/#experience" },
-    { label: "Software", sidebarLabel: "software", href: "/#projects" },
-    { label: "Talks", sidebarLabel: "talks", href: "/#art" },
+    { label: "Home", sidebarLabel: "home", href: withBasePath("#intro") },
+    { label: "About", sidebarLabel: "about", href: withBasePath("#about") },
+    {
+      label: "Experience",
+      sidebarLabel: "experience",
+      href: withBasePath("#experience"),
+    },
+    { label: "Software", sidebarLabel: "software", href: withBasePath("#projects") },
+    { label: "Talks", sidebarLabel: "talks", href: withBasePath("#art") },
   ],
   socials: {
     email: "mailto:shreyassharma9912@gmail.com",
@@ -200,7 +207,7 @@ export const creditsContent = {
 
 export const externalLinksContent = {
   npmHost: "npmjs.com",
-  npmLogoSrc: "/assets/npm-logo.png",
+  npmLogoSrc: `${appBasePath}assets/npm-logo.png`,
   npmAltText: "npm package",
 };
 
