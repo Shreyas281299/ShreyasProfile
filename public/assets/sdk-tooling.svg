@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#FFF9D2"/>
+  <g transform="translate(145 115)">
+    <rect width="910" height="490" rx="30" fill="#FFFDF0" stroke="#86BEE3" stroke-width="3"/>
+    <rect width="910" height="70" rx="30" fill="#FFE8C8"/>
+    <circle cx="45" cy="35" r="11" fill="#ff6b6b"/>
+    <circle cx="78" cy="35" r="11" fill="#ffd166"/>
+    <circle cx="111" cy="35" r="11" fill="#3F93C5"/>
+    <text x="55" y="155" fill="#3F93C5" font-family="monospace" font-size="34">npm run build:packages</text>
+    <text x="55" y="225" fill="#243B53" font-family="monospace" font-size="30">✓ workspace graph resolved</text>
+    <text x="55" y="285" fill="#243B53" font-family="monospace" font-size="30">✓ changelog generated</text>
+    <text x="55" y="345" fill="#243B53" font-family="monospace" font-size="30">✓ release candidate ready</text>
+    <path d="M610 150l85 85-85 85M790 150l85 85-85 85" fill="none" stroke="#3F93C5" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+  </g>
+</svg>
