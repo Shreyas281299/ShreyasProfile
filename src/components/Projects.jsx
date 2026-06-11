@@ -6,11 +6,17 @@ import { Carousel } from "react-bootstrap";
 import ExternalLinks from "./ExternalLinks";
 import flappyBirdVideo from "../assets/Flappy-bird.mov";
 import webexCallingExtensionImage from "../assets/Webex-calling-extension.png";
+import aiWrapupImage from "../assets/ai-wrapup.jpg";
+import webexCallingImage from "../assets/Webex Calling.png";
+import webexMeetingsImage from "../assets/Webex-Meetings.png";
 import { projectsContent } from "../constants";
 
 const mediaAssets = {
   flappyBirdVideo,
   webexCallingExtensionImage,
+  aiWrapupImage,
+  webexCallingImage,
+  webexMeetingsImage,
 };
 
 const Projects = () => {

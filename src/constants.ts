@@ -1,6 +1,3 @@
-const appBasePath = import.meta.env.BASE_URL;
-const withBasePath = (hash: string) => `${appBasePath}${hash}`;
-
 export const introContent = {
   terminalAriaLabel: "Profile object",
   terminalTitle: "shreyas.profile",
@@ -110,6 +107,36 @@ export const projectsContent = {
       imageClass: "carousel-fit-height-image",
       showTitle: false,
     },
+    {
+      name: "Contact Center Widgets",
+      title: "contact center widgets",
+      desc: "Composable widgets for Webex Contact Center workflows",
+      techStack: "REACT, CONTACT CENTER, WEBEX WIDGETS",
+      link: "https://github.com/webex/widgets",
+      open: "https://www.npmjs.com/package/@webex/cc-widgets",
+      mediaId: "aiWrapupImage",
+      showTitle: false,
+    },
+    {
+      name: "Webex Calling SDK",
+      title: "webex calling sdk",
+      desc: "Audio calling SDK flows for browser apps, including call control, transfer, and multi-call experiences.",
+      techStack: "@WEBEX/CALLING, WEBRTC, TYPESCRIPT",
+      link: "https://github.com/webex/webex-js-sdk/tree/master/packages/calling",
+      open: "https://www.npmjs.com/package/@webex/calling",
+      mediaId: "webexCallingImage",
+      showTitle: false,
+    },
+    {
+      name: "Webex Meetings SDK",
+      title: "webex meetings sdk",
+      desc: "Meetings SDK workflows for rich browser collaboration, media controls, and meeting experiences.",
+      techStack: "@WEBEX/PLUGIN-MEETINGS, WEBRTC, MEETINGS API",
+      link: "https://github.com/webex/webex-js-sdk/tree/master/packages/@webex/plugin-meetings",
+      open: "https://www.npmjs.com/package/@webex/plugin-meetings",
+      mediaId: "webexMeetingsImage",
+      showTitle: false,
+    },
   ],
   projects: [
     {
@@ -118,6 +145,7 @@ export const projectsContent = {
       techStack: "@webex/calling, WebRTC, TypeScript",
       link: "https://github.com/webex/webex-js-sdk/tree/master/packages/calling",
       open: "https://www.npmjs.com/package/@webex/calling",
+      mediaId: "webexCallingImage",
     },
     {
       name: "Webex Meetings SDK",
@@ -125,6 +153,7 @@ export const projectsContent = {
       techStack: "@webex/plugin-meetings, WebRTC, Meetings API",
       link: "https://github.com/webex/webex-js-sdk/tree/master/packages/@webex/plugin-meetings",
       open: "https://www.npmjs.com/package/@webex/plugin-meetings",
+      mediaId: "webexMeetingsImage",
     },
     {
       name: "Contact Center Widgets",
@@ -132,6 +161,7 @@ export const projectsContent = {
       techStack: "@webex/cc-widgets, React, Contact Center",
       link: "https://github.com/webex/widgets",
       open: "https://www.npmjs.com/package/@webex/cc-widgets",
+      mediaId: "aiWrapupImage",
     },
     {
       name: "Webex Calling Chrome Extension",
@@ -183,15 +213,15 @@ export const talksContent = {
 export const navigationContent = {
   brand: "Shreyas Sharma",
   links: [
-    { label: "Home", sidebarLabel: "home", href: withBasePath("#intro") },
-    { label: "About", sidebarLabel: "about", href: withBasePath("#about") },
+    { label: "Home", sidebarLabel: "home", href: "#intro" },
+    { label: "About", sidebarLabel: "about", href: "#about" },
     {
       label: "Experience",
       sidebarLabel: "experience",
-      href: withBasePath("#experience"),
+      href: "#experience",
     },
-    { label: "Software", sidebarLabel: "software", href: withBasePath("#projects") },
-    { label: "Talks", sidebarLabel: "talks", href: withBasePath("#art") },
+    { label: "Software", sidebarLabel: "software", href: "#projects" },
+    { label: "Talks", sidebarLabel: "talks", href: "#art" },
   ],
   socials: {
     email: "mailto:shreyassharma9912@gmail.com",
@@ -207,10 +237,14 @@ export const creditsContent = {
 
 export const externalLinksContent = {
   npmHost: "npmjs.com",
-  npmLogoSrc: `${appBasePath}assets/npm-logo.png`,
+  npmLogoPath: "assets/npm-logo.png",
   npmAltText: "npm package",
 };
 
 export const appContent = {
   mountLog: "App mounting...",
+};
+
+export const driveModeContent = {
+  enableLabel: "drive mode",
 };

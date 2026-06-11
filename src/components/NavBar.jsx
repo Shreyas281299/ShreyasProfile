@@ -6,6 +6,8 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import "../styles/NavBar.css";
 import { navigationContent } from "../constants";
 
+const withBasePath = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
   const scrollPos = useRef(0);
@@ -37,12 +39,14 @@ const NavBar = () => {
       onToggle={(isExpanded) => setExpanded(isExpanded)}
     >
       <Container>
-        <Navbar.Brand href="/">{navigationContent.brand}</Navbar.Brand>
+        <Navbar.Brand href={import.meta.env.BASE_URL}>
+          {navigationContent.brand}
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" onSelect={() => setExpanded(false)}>
             {navigationContent.links.map((link) => (
-              <Nav.Link key={link.href} href={link.href}>
+              <Nav.Link key={link.href} href={withBasePath(link.href)}>
                 {link.label}
               </Nav.Link>
             ))}

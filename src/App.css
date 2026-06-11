@@ -55,6 +55,35 @@ a:hover {
 
 #content {
   width: 100%;
+  transform-origin: 50% 44%;
+  transition:
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drive-world-active {
+  min-height: 100vh;
+  perspective: 1400px;
+  overflow: hidden;
+}
+
+.drive-world-active .navbar,
+.drive-world-active .sidebar-nav {
+  opacity: 0.1;
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drive-world-active #content {
+  opacity: 0;
+  transform: translateY(-28px) rotateX(58deg) scale(0.9);
+  filter: blur(10px) saturate(0.8);
+  pointer-events: none;
+}
+
+.drive-world-active #content > * {
+  pointer-events: none;
 }
 
 .rs-steps-horizontal .rs-steps-item-content {

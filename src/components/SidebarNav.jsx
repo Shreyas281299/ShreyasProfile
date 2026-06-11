@@ -6,6 +6,8 @@ import FadeInSection from "./FadeInSection";
 import { useMediaQuery } from "@mui/material";
 import { navigationContent } from "../constants";
 
+const withBasePath = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 const SidebarNav = () => {
   const isMobile = useMediaQuery("(max-width: 800px)");
 
@@ -16,7 +18,7 @@ const SidebarNav = () => {
           {navigationContent.links.map((link, i) => (
             <FadeInSection key={link.href} delay={(i + 1) * 100 + "ms"}>
               <div>
-                <a href={link.href}>{link.sidebarLabel}</a>
+                <a href={withBasePath(link.href)}>{link.sidebarLabel}</a>
               </div>
             </FadeInSection>
           ))}

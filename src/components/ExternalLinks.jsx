@@ -5,6 +5,7 @@ import { externalLinksContent } from "../constants";
 
 const ExternalLinks = ({ githubLink, openLink }) => {
   const isNpmLink = openLink?.includes(externalLinksContent.npmHost);
+  const npmLogoSrc = `${import.meta.env.BASE_URL}${externalLinksContent.npmLogoPath}`;
 
   return (
     <span className="external-links">
@@ -32,7 +33,7 @@ const ExternalLinks = ({ githubLink, openLink }) => {
         >
           {isNpmLink ? (
             <img
-              src={externalLinksContent.npmLogoSrc}
+              src={npmLogoSrc}
               alt={externalLinksContent.npmAltText}
             />
           ) : (
