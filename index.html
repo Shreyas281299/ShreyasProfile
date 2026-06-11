@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,11 +11,110 @@
     />
     <title>Shreyas Sharma</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        background: #fff9d2;
+        color: #243b53;
+        font-family:
+          "NTR",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        transition:
+          opacity 280ms ease,
+          visibility 280ms ease;
+      }
+
+      #initial-loader.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .initial-loader-card {
+        display: grid;
+        gap: 10px;
+        justify-items: center;
+        padding: 28px 34px;
+        border: 1px solid rgba(63, 147, 197, 0.22);
+        border-radius: 22px;
+        background: rgba(255, 254, 242, 0.72);
+        box-shadow: 0 20px 60px rgba(92, 124, 150, 0.16);
+      }
+
+      .initial-loader-name {
+        font-size: 34px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .initial-loader-status {
+        color: #3f93c5;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 13px;
+      }
+
+      .initial-loader-dots {
+        display: flex;
+        gap: 8px;
+        padding-top: 4px;
+      }
+
+      .initial-loader-dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #3f93c5;
+        animation: initial-loader-pulse 900ms ease-in-out infinite;
+      }
+
+      .initial-loader-dots span:nth-child(2) {
+        animation-delay: 120ms;
+      }
+
+      .initial-loader-dots span:nth-child(3) {
+        animation-delay: 240ms;
+      }
+
+      @keyframes initial-loader-pulse {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.35;
+        }
+
+        50% {
+          transform: translateY(-4px);
+          opacity: 1;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #initial-loader,
+        .initial-loader-dots span {
+          transition: none;
+          animation: none;
+        }
+      }
     </style>
   </head>
   <body>
+    <div id="initial-loader" aria-live="polite" aria-label="Loading portfolio">
+      <div class="initial-loader-card">
+        <div class="initial-loader-dots" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

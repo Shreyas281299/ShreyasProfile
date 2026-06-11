@@ -1,0 +1,2 @@
+- Create a better loading screen
+- Change the car
