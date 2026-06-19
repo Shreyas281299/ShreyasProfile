@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 const staticSource = path.resolve(rootDir, "assets/static");
-const staticRoute = "/ShreyasProfile-V2/static/";
+const staticRoute = "/ShreyasProfile/static/";
 
 const staticAssetsPlugin = () => ({
   name: "copy-v2-static-assets",
@@ -72,7 +72,7 @@ const glslPlugin = () => ({
 });
 
 export default defineConfig({
-  base: "/ShreyasProfile-V2/",
+  base: "/ShreyasProfile/",
   publicDir: "assets/public",
   plugins: [react(), glslPlugin(), staticAssetsPlugin()],
   resolve: {
