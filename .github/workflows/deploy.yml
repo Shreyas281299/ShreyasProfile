@@ -31,8 +31,16 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci --include=optional
+      - name: Clean previous build
+        run: rm -rf dist
       - name: Build
         run: npm run build
+      - name: Prepare Pages artifact
+        run: |
+          test -f dist/index.html
+          test -d dist/assets
+          test -n "$(ls -A dist/assets)"
+          touch dist/.nojekyll
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
